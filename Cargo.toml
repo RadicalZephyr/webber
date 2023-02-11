@@ -12,13 +12,17 @@ exclude = ["assets/**/*", "tools/**/*", ".github/**/*"]
 resolver = "2"
 
 [profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
 opt-level = 3
 
 [workspace]
 members = ["./", "tools/ci"]
 
 [dependencies]
-bevy = { version = "0.9", features = ["dynamic"] }
+bevy = { version = "0.9" }
 
 ##  2D Rendering
 
