@@ -8,14 +8,14 @@ use bevy::prelude::*;
 pub mod utils;
 
 /// A plugin
-pub struct HelloWorldPlugin;
+pub struct WebberPlugin;
 
-impl Plugin for HelloWorldPlugin {
+impl Plugin for WebberPlugin {
     fn build(&self, app: &mut App) {
-        app.add_startup_system(hello_world);
+        app.add_startup_system(webber);
     }
 }
 
-fn hello_world() {
+fn webber() {
     println!("Hello, World!");
 }
